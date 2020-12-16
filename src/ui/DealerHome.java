@@ -33,7 +33,6 @@ public class DealerHome extends JFrame {
 	 * Create the frame.
 	 */
 	public DealerHome() {
-//		Locale.setDefault(new Locale("en","US"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 891, 584);
 		contentPane = new JPanel();
@@ -47,10 +46,10 @@ public class DealerHome extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Hi, id");
 		NorthPanel.add(lblNewLabel);
-		
+
 		JButton btnNewButton = new JButton("Log Out");
 		btnNewButton.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int a = JOptionPane.showConfirmDialog(btnNewButton, "Are you sure to log out?");
@@ -58,11 +57,13 @@ public class DealerHome extends JFrame {
                if (a == JOptionPane.YES_OPTION) {
                    dispose();
                    // redirect to login
-                   
+				   CustomerLogin login= new CustomerLogin();
+				   login.setVisible(true);
                }
-				
+
 			}
-		});
+		}
+		);
 		NorthPanel.add(btnNewButton);
 		
 		JPanel MainPanel = new JPanel();
